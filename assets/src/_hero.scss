@@ -1,0 +1,54 @@
+.hero {
+    position: relative;
+    padding: 50px 0;
+    background-image: linear-gradient(45deg, #55b7ff 0%, #7e5aff 100%);
+
+    &__body {
+        margin: 0 auto;
+        padding: 250px 40px 230px;
+        text-align: center;
+        position: relative;
+
+        @include scr-min(1200px) {
+            width: 970px;
+        }
+    }
+
+    &__heading {
+        @include font-heading;
+        color: white;
+        text-transform: uppercase;
+        font-size: 80px;
+        margin: 0 0 20px 0;
+        letter-spacing: 4.2px;
+    }
+
+    &__subheading {
+        @include font-main(#ffffff, 18px);
+        letter-spacing: 5.4px;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    &::before {
+        @include overlay(url('../img/hero-overlay.png'));
+    }
+
+    .scroll-down {
+        // display: inline-block;
+        // position: relative;
+        // left: 50%;
+        // transform: translateX(-50%);
+        display: block;
+        margin: 0 auto;
+        content: url('../img/icons/arrow-down.png');
+        padding: 18px 16px;
+        border: 1px solid rgba(255, 255, 255, .7);
+        border-radius: 50%;
+
+        &:hover {
+            transform: rotate(360deg);
+            transition: .5s ease-in-out;
+        }
+    }
+}
