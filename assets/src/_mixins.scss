@@ -36,6 +36,7 @@
     color: $font-main;
     font-size: 44px;
     font-weight: normal;
+    text-transform: uppercase;
 }
 
 @mixin font-main ($color, $size) {
