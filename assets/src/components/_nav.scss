@@ -1,0 +1,41 @@
+.nav {
+    &__list {
+        @include flex();
+        @include list-res();
+    }
+
+    &__item:not(:last-child) {
+        margin-right: 60px;
+    }
+
+    &__link {
+        padding: 25px 10px;
+        @include link-res();
+        @include font-main(#ffffff, 14px);
+        text-transform: uppercase;
+        display: inline-block;
+        line-height: 0;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 9px;
+            height: 9px;
+            border: 1px solid #ffffff;
+            border-radius: 50%;
+            background-color: transparent;
+            margin-right: 14px;
+            transition: .3s;
+            box-sizing: border-box;
+        }
+
+        &:hover::before,
+        &:focus::before {
+            background: #ffffff;
+        }
+    }
+
+    &--header {
+        margin-right: 75px;
+    }
+}

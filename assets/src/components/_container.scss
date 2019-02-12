@@ -1,0 +1,21 @@
+.container {
+    margin: 0 auto;
+    position: relative;
+
+    @include scr-min(1200px) {
+        width: 1170px;
+    }
+
+    &--gallery {
+        text-align: center;
+    }
+
+    &--footer {
+        @include flex-wrapped;
+        align-content: space-between;
+
+        @include scr-min(1200px) {
+            width: 770px;
+        }
+    }
+}

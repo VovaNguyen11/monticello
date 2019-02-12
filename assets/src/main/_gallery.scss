@@ -1,0 +1,50 @@
+.gallery {
+    padding: 140px 0;
+
+    &__wrapper {
+        padding: 100px 60px;
+        text-align: center;
+    }
+
+    &__item {
+        @include link-res;
+        position: relative;
+
+        &::before {
+            @include overlay(#000000);
+            opacity: 0;
+        }
+
+        &::after {
+            @include overlay(url('../img/gallery/gallery-img-overlay.png') no-repeat center);
+            opacity: 0;
+        }
+
+        &:hover::before {
+            opacity: .15;
+        }
+
+        &:hover::after {
+            opacity: 1;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}
+
+.grid-outer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.grid-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 10px;
+}

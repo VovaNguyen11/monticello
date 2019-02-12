@@ -29,15 +29,11 @@
         margin: 0;
     }
 
-    // &::before {
-    //     @include overlay(url('../img/hero-overlay.png'));
-    // }
+    &::before {
+        @include overlay(url('../img/hero-overlay.png'));
+    }
 
     .scroll-down {
-        // display: inline-block;
-        // position: relative;
-        // left: 50%;
-        // transform: translateX(-50%);
         display: block;
         margin: 0 auto;
         content: url('../img/icons/arrow-down.png');

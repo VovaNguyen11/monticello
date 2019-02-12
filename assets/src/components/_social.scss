@@ -1,0 +1,32 @@
+.social {
+    &__list {
+        @include flex();
+        @include list-res();
+    }
+
+    &__item:not(:last-child) {
+        margin-right: 20px;
+    }
+
+    &__link {
+        @include link-res();
+        @include flex-centered;
+        width: 40px;
+        height: 40px;
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, .4);
+        border-radius: 50%;
+        background: transparent;
+        transition: .3s ease-in-out;
+        box-sizing: border-box;
+
+        &:hover {
+            background: #ffffff;
+            color: $main-color;
+        }
+    }
+
+    i {
+        font-size: 16px;
+    }
+}

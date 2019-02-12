@@ -1,0 +1,14 @@
+.footer {
+    position: relative;
+    padding: 200px 0 210px;
+    background-image: linear-gradient(45deg, #55b7ff 0%, #7e5aff 100%);
+    &::before{
+        @include overlay(url('../img/footer-overlay.png'));
+        opacity: 1;
+    }
+    &__copyright{
+        flex: 0 0 100%;
+        @include font-main(#ffffff, 14px);
+    }
+
+}

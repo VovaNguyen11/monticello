@@ -9,8 +9,7 @@
     <!-- Normalize -->
     <link rel="stylesheet" href="assets/dist/normalize.css">
     <!-- Plugins' styles -->
-    <link rel="stylesheet" href="assets/libs/slick-slider/slick.css">
-    <link rel="stylesheet" href="assets/libs/slick-slider/slick-theme.css">
+    <link rel="stylesheet" href="assets/libs/fancybox/jquery.fancybox.min.css">
     <!-- Custom styles -->
     <link rel="stylesheet" href="assets/dist/style.css">
     <!-- Font Awesome -->
@@ -28,10 +27,10 @@
 
                 <nav class="nav nav--header">
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="" class="nav__link">About Us</a></li>
-                        <li class="nav__item"><a href="" class="nav__link">Projects</a></li>
-                        <li class="nav__item"><a href="" class="nav__link">News</a></li>
-                        <li class="nav__item"><a href="" class="nav__link">Contact</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">About Us</a></li>
+                        <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
+                        <li class="nav__item"><a href="#news" class="nav__link">News</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     </ul>
                 </nav>
 
@@ -55,10 +54,10 @@
     <!-- /.hero -->
 
     <main class="main" id="main">
-        <section class="projects">
-            <div class="container container-projects">
+        <section class="projects" id="projects">
+            <div class="container container--projects">
                 <h2 class="section-heading"">What we do</h2>
-                <div class="project">
+                <div class=" project">
                     <div class="project__preview">
                         <img src="assets/img/project-preview/trade-center.jpg" alt="" class="project__preview-img">
                     </div>
@@ -90,7 +89,7 @@
         </section>
         <!-- /.projects -->
 
-        <section class="news">
+        <section class="news" id="news">
             <div class="container container--news">
                 <h2 class="section-heading section-heading--white">News</h2>
                 <div class="news__slider js-news-slider">
@@ -98,8 +97,8 @@
                         <img src="assets/img/news-preview/news-1.jpg" alt="" class="news__preview">
                         <div class="news__body">
                             <h4 class="news__heading">See The Unmatched Beauty Of The Great.1</h4>
-                            <p class="news__text">Free directories: directories are perfect for customers that
-                                are... searching for</p>
+                            <p class="news__text">Free directories: directories are perfect for customers that are...
+                                searching for</p>
                             <div class="news__author">
                                 <img src="assets/img/news-authors/isaac-dunn.png" alt="" class="news__author-avatar">
                                 <div class="author__content">
@@ -221,11 +220,70 @@
             <!-- /.container -->
         </section>
         <!-- /.news -->
+
+        <section class="gallery" id="gallery">
+            <div class="container container--gallery">
+                <h2 class="section-heading">Gallery</h2>
+                <div class="gallery__wrapper grid-outer js-gallery">
+                    <a href="assets/img/gallery/gallery-item1.jpg" class="gallery__item" data-fancybox="gallery">
+                        <img src="assets/img/gallery/gallery-item1.jpg" alt="" class="gallery__img">
+                    </a>
+                    <div class="grid-inner">
+                        <a href="assets/img/gallery/gallery-item2.jpg" class="gallery__item" data-fancybox="gallery">
+                            <img src="assets/img/gallery/gallery-item2.jpg" alt="" class="gallery__img">
+                        </a>
+                        <a href="assets/img/gallery/gallery-item3.jpg" class="gallery__item" data-fancybox="gallery">
+                            <img src="assets/img/gallery/gallery-item3.jpg" alt="" class="gallery__img">
+                        </a>
+                        <a href="assets/img/gallery/gallery-item4.jpg" class="gallery__item" data-fancybox="gallery">
+                            <img src="assets/img/gallery/gallery-item4.jpg" alt="" class="gallery__img">
+                        </a>
+                        <a href="assets/img/gallery/gallery-item5.jpg" class="gallery__item" data-fancybox="gallery">
+                            <img src="assets/img/gallery/gallery-item5.jpg" alt="" class="gallery__img">
+                        </a>
+                    </div>
+                </div>
+                <!-- /.gallery__wrapper -->
+                <a href="" class="btn btn--gallery btn--lg">See more</a>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container container--contact">
+                <h2 class="section-heading">Get in touch</h2>
+            </div>
+        </section>
+
     </main>
 
+    <section class="contact">
+        <div class="map__contanier"></div>
+    </section>
+
+    <footer class="footer">
+        <div class="container container--footer">
+            <a href="" class="logo logo--footer">
+                <img src="assets/img/logo.png" alt="Monticello logo" class="logo__img">
+            </a>
+            <nav class="social">
+                <ul class="social__list">
+                    <li class="social__item"><a href="#" class="social__link"><i class="fab fa-facebook-f"></i></a></li>
+                    <li class="social__item"><a href="#" class="social__link"><i class="fab fa-twitter"></i></a></li>
+                    <li class="social__item"><a href="#" class="social__link"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </nav>
+            <p class="footer__copyright">Copyrights © 2017 Monticello Group | Made with <i class="fas fa-heart"></i>
+                by Ga
+                Huy
+            </p>
+        </div>
+    </footer>
+    <!-- GMap -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDU0-UZP3bAiUwOELr_wyaGbfIM6iCAwBU"></script>
     <!-- jQuery -->
     <script src="assets/libs/jquery/jquery-3.3.1.min.js"></script>
     <!-- jQuery Plugins -->
+    <script src="assets/libs/fancybox/jquery.fancybox.min.js"></script>
     <script src="assets/libs/slick-slider/slick.min.js"></script>
     <!-- Custom Script -->
     <script src="assets/js/main.js"></script>

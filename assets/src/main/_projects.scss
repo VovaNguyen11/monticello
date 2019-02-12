@@ -1,0 +1,98 @@
+.projects {
+    padding: 100px 0 140px;
+    overflow: hidden;
+
+    .project {
+        position: relative;
+        @include flex-between;
+
+        &:first-of-type {
+            padding-top: 160px;
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: 140px;
+        }
+
+        &:nth-child(odd) .btn:hover{
+            background-color: $alt-color;
+        }
+
+        &:nth-child(odd) .project__preview {
+            order: 1;
+            margin: 0 0 0 40px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -70px;
+                right: -215px;
+                bottom: 70px;
+                left: 70px;
+                background-color: $alt-color;
+                z-index: -1;
+            }
+        }
+
+        &__preview {
+            flex: 0 0 630px;
+            order: 0;
+            margin-right: 40px;
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -70px;
+                right: 70px;
+                bottom: 70px;
+                left: -215px;
+                background-color: $main-color;
+                z-index: -1;
+            }
+
+            &-img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        &__content {
+            padding: 35px 0;
+        }
+
+        &__subtitle {
+            @include font-main($font-main, 22px);
+            display: inline-block;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        &__title {
+            @include font-heading;
+            margin: 0 0 35px 0;
+        }
+
+        &__text {
+            @include font-text;
+            margin: 0 0 35px 0;
+            line-height: 30px;
+        }
+
+        &__location {
+            @include font-text;
+            font-style: italic;
+            margin: 0;
+
+            &::before {
+                content: '\f3c5';
+                font-family: 'Font Awesome 5 Free';
+                font-size: 16px;
+                font-weight: 700;
+                margin-right: 10px;
+                font-style: normal;
+            }
+        }
+    }
+}
