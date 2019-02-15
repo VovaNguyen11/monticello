@@ -5,13 +5,14 @@
     .project {
         position: relative;
         @include flex-between;
+        align-items: stretch;
 
         &:first-of-type {
-            padding-top: 160px;
+            padding-top: 164px;
         }
 
         &:not(:last-of-type) {
-            margin-bottom: 140px;
+            margin-bottom: 210px;
         }
 
         &:nth-child(odd) .btn:hover{
@@ -20,7 +21,7 @@
 
         &:nth-child(odd) .project__preview {
             order: 1;
-            margin: 0 0 0 40px;
+            margin: 0 0 0 70px;
 
             &::before {
                 content: '';
@@ -28,7 +29,7 @@
                 top: -70px;
                 right: -215px;
                 bottom: 70px;
-                left: 70px;
+                left: 260px;
                 background-color: $alt-color;
                 z-index: -1;
             }
@@ -37,14 +38,14 @@
         &__preview {
             flex: 0 0 630px;
             order: 0;
-            margin-right: 40px;
+            margin-right: 70px;
             position: relative;
 
             &::before {
                 content: '';
                 position: absolute;
                 top: -70px;
-                right: 70px;
+                right: 260px;
                 bottom: 70px;
                 left: -215px;
                 background-color: $main-color;
@@ -59,25 +60,26 @@
         }
 
         &__content {
-            padding: 35px 0;
+            padding: 55px 0 65px;
         }
 
         &__subtitle {
             @include font-main($font-main, 22px);
             display: inline-block;
             text-transform: uppercase;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
         }
 
         &__title {
             @include font-heading;
-            margin: 0 0 35px 0;
+            margin: 0 0 20px 0;
         }
 
         &__text {
             @include font-text;
-            margin: 0 0 35px 0;
+            margin: 0px 0 32px 0;
             line-height: 30px;
+            letter-spacing: 0.1px;
         }
 
         &__location {

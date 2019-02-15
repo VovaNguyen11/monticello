@@ -100,9 +100,23 @@
 }
 
 /* Gap between slides */
-.slick-slide{
-    margin: 0 15px;
-}
-.slick-list {
-    margin: 0 -15px;
-}
+.slick-slide {
+    margin-left:30px;
+  }
+
+  /* the parent */
+  .slick-list {
+    margin-left:-30px;
+  }
+
+// .slick-slider {
+//     margin:0 -15px;
+// }
+// .slick-slide {
+//     padding: 10px;
+//     margin-right:15px;
+//     margin-left:15px;
+// }
+// .slick-slide.slick-active:first-child, .slick-slide.slick-active:last-child{ 
+//   margin: 0;
+// }

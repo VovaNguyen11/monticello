@@ -1,11 +1,11 @@
 .hero {
     position: relative;
-    padding: 50px 0;
+    padding: 50px 0 46px;
     background-image: linear-gradient(45deg, #55b7ff 0%, #7e5aff 100%);
 
     &__body {
         margin: 0 auto;
-        padding: 250px 40px 230px;
+        padding: 250px 40px 224px;
         text-align: center;
         position: relative;
 
@@ -18,8 +18,8 @@
         @include font-heading;
         color: white;
         font-size: 80px;
-        margin: 0 0 20px 0;
-        letter-spacing: 4.2px;
+        margin: 0 0 15px 0;
+        letter-spacing: 3.8px;
     }
 
     &__subheading {

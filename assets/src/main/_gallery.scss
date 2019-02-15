@@ -2,8 +2,9 @@
     padding: 140px 0;
 
     &__wrapper {
-        padding: 100px 60px;
+        padding: 93px 0 59px;
         text-align: center;
+        box-sizing: border-box;
     }
 
     &__item {
@@ -40,6 +41,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+
+    @include scr-max(812px){
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
 }
 
 .grid-inner {

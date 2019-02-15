@@ -10,6 +10,22 @@
         text-align: center;
     }
 
+    &--contact {
+        box-sizing: border-box;
+        padding: 55px 60px 50px;
+        background: #fff;
+
+        position: absolute;
+        right: 0;
+        bottom: -150px;
+        left: 0;
+        z-index: 1;
+
+        @include scr-min(812px) {
+            width: 770px;
+        }
+    }
+
     &--footer {
         @include flex-wrapped;
         align-content: space-between;
