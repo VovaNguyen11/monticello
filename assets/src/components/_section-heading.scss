@@ -1,31 +1,36 @@
 .section-heading {
-    @include font-heading;
-    font-family: 'GothamMedium';
-    margin: 0;
-    text-align: center;
-    position: relative;
-    padding-top: 30px;
+  @include font-heading;
+  font-family: 'GothamMedium';
+  margin: 0;
+  text-align: center;
+  position: relative;
+  padding-top: 30px;
+  font-size: rem(80);
+
+  @include scr-max($desktop) {
+    padding-top: 10px;
+  }
+
+  &::before {
+    content: '';
+    height: 1px;
+    width: 100px;
+    background-color: $font-main;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  &--white {
+    color: #ffffff;
 
     &::before {
-        content: '';
-        height: 1px;
-        width: 100px;
-        background-color: $font-main;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 50%;
-        -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-        transform: translateX(-50%);
+      background-color: #fff;
     }
-
-    &--white {
-        color: #ffffff;
-
-        &::before {
-            background-color: #fff;
-        }
-    }
+  }
 }

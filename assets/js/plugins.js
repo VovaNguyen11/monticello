@@ -4,7 +4,7 @@
             slidesToShow: 3,
             slidesToScroll: 1,
             dots: true,
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 4000,
             infinite: false,
             responsive: [{
@@ -33,11 +33,9 @@
                 }
             ]
         });
+        $('[data-fancybox="gallery"]').fancybox({
+            animationEffect: 'zoom-in-out',
+            transitionEffect: 'slide'
+        });
     });
-
-    $('[data-fancybox="gallery"]').fancybox({
-        animationEffect: 'zoom-in-out',
-        transitionEffect: 'slide'
-    });
-
 })(jQuery)

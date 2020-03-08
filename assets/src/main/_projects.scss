@@ -1,100 +1,174 @@
 .projects {
-    padding: 100px 0 140px;
-    overflow: hidden;
+  padding: 100px 0 140px;
+  overflow: hidden;
 
-    .project {
-        position: relative;
-        @include flex-between;
-        align-items: stretch;
+  @include respond-to(tablet) {
+    padding: 70px 15px;
+  }
 
-        &:first-of-type {
-            padding-top: 164px;
-        }
+  @include respond-to(phone) {
+    padding: 50px 15px 20px;
+  }
 
-        &:not(:last-of-type) {
-            margin-bottom: 210px;
-        }
+  .project {
+    position: relative;
+    @include flex-between;
+    align-items: stretch;
 
-        &:nth-child(odd) .btn:hover{
-            background-color: $alt-color;
-        }
-
-        &:nth-child(odd) .project__preview {
-            order: 1;
-            margin: 0 0 0 70px;
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: -70px;
-                right: -215px;
-                bottom: 70px;
-                left: 260px;
-                background-color: $alt-color;
-                z-index: -1;
-            }
-        }
-
-        &__preview {
-            flex: 0 0 630px;
-            order: 0;
-            margin-right: 70px;
-            position: relative;
-
-            &::before {
-                content: '';
-                position: absolute;
-                top: -70px;
-                right: 260px;
-                bottom: 70px;
-                left: -215px;
-                background-color: $main-color;
-                z-index: -1;
-            }
-
-            &-img {
-                display: block;
-                width: 100%;
-                height: auto;
-            }
-        }
-
-        &__content {
-            padding: 55px 0 65px;
-        }
-
-        &__subtitle {
-            @include font-main($font-main, 22px);
-            display: inline-block;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        &__title {
-            @include font-heading;
-            margin: 0 0 20px 0;
-        }
-
-        &__text {
-            @include font-text;
-            margin: 0px 0 32px 0;
-            line-height: 30px;
-            letter-spacing: 0.1px;
-        }
-
-        &__location {
-            @include font-text;
-            font-style: italic;
-            margin: 0;
-
-            &::before {
-                content: '\f3c5';
-                font-family: 'Font Awesome 5 Free';
-                font-size: 16px;
-                font-weight: 700;
-                margin-right: 10px;
-                font-style: normal;
-            }
-        }
+    @include scr-max($desktop) {
+      flex-wrap: wrap;
+      justify-content: center;
     }
+
+    &:first-of-type {
+      margin: 165px 0 210px;
+
+      @include respond-to(tablet) {
+        margin: 110px 0;
+      }
+      @include respond-to(phone) {
+        margin: 70px 0;
+      }
+    }
+
+    &:nth-child(odd) .btn:hover {
+      background-color: $alt-color;
+    }
+
+    &:nth-child(odd) .project__preview-placeholder {
+      order: 1;
+      margin: 0 0 0 70px;
+
+      @include scr-max($desktop) {
+        order: -1;
+      }
+
+      @include respond-to(phone) {
+        margin: 0;
+      }
+
+      .project__preview {
+        &::before {
+          content: '';
+          position: absolute;
+          top: -70px;
+          right: -215px;
+          bottom: 70px;
+          left: 260px;
+          background-color: $alt-color;
+          z-index: -1;
+
+          @include respond-to(tablet) {
+            left: 80px;
+          }
+
+          @include respond-to(phone) {
+            left: 30px;
+            top: -30px;
+            bottom: 30px;
+          }
+        }
+      }
+    }
+
+    &__preview-placeholder {
+      flex: 0 0 630px;
+      order: 0;
+      margin-right: 70px;
+
+      @include respond-to(tablet) {
+        flex-basis: 440px;
+      }
+
+      @include respond-to(phone) {
+        flex-basis: 100%;
+        margin-right: 0;
+      }
+    }
+
+    &__preview {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -70px;
+        right: 260px;
+        bottom: 70px;
+        left: -215px;
+        background-color: $main-color;
+        z-index: -1;
+
+        @include respond-to(tablet) {
+          right: 80px;
+        }
+
+        @include respond-to(phone) {
+          top: -30px;
+          right: 20px;
+          bottom: 30px;
+        }
+      }
+
+      &-img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__content {
+      padding: 55px 0 65px;
+
+      @include respond-to(tablet) {
+        padding: 40px 0 50px;
+      }
+
+      @include respond-to(phone) {
+        padding: 20px 0 25px;
+      }
+    }
+
+    &:nth-child(even) .project__content {
+      text-align: right;
+    }
+
+    &__subtitle {
+      @include font-main($font-main, rem(22));
+      display: inline-block;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    &__title {
+      @include font-heading;
+      margin: 0 0 20px 0;
+    }
+
+    &__text {
+      @include font-text;
+      margin: 0px 0 32px 0;
+      line-height: 30px;
+      letter-spacing: 0.1px;
+      @include respond-to(phone) {
+        line-height: 24px;
+        margin-bottom: 15px;
+      }
+    }
+
+    &__location {
+      @include font-text;
+      font-style: italic;
+      margin: 0;
+
+      &::before {
+        content: '\f3c5';
+        font-family: 'Font Awesome 5 Free';
+        font-size: rem(16);
+        font-weight: 700;
+        margin-right: 10px;
+        font-style: normal;
+      }
+    }
+  }
 }

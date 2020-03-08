@@ -1,35 +1,40 @@
 .btn {
-    @include link-res;
-    @include font-main($font-main, 14px);
-    box-sizing: border-box;
-    text-transform: uppercase;
-    line-height: 22px;
-    padding: 13px 40px;
-    display: inline-block;
-    border: 1px solid #2c4058;
-    text-align: center;
+  @include link-res;
+  @include font-main($font-main, rem(14));
+  box-sizing: border-box;
+  text-transform: uppercase;
+  line-height: 22px;
+  padding: 13px 40px;
+  display: inline-block;
+  border: 1px solid #2c4058;
+  text-align: center;
 
-    &:hover {
-        background-color: $main-color;
-        color: #ffffff;
-        border: 1px solid transparent;
-        transition: .3s ease-in-out;
-    }
+  &:hover {
+    background-color: $main-color;
+    color: #ffffff;
+    border: 1px solid transparent;
+    transition: 0.3s ease-in-out;
+  }
 
-    &--project {
-        margin-bottom: 57px;
+  &--project {
+    margin-bottom: 57px;
+    @include respond-to(tablet) {
+      margin-bottom: 30px;
     }
+    @include respond-to(phone) {
+      margin-bottom: 15px;
+    }
+  }
 
-    &--s {
-        width: 140px;
-    }
+  &--s {
+    width: 140px;
+  }
 
-    &--lg {
-        width: 191px;
-    }
+  &--lg {
+    width: 191px;
+  }
 
-    &--right{
-        position: absolute;
-        right: 0;
-    }
+  &--right {
+    float: right;
+  }
 }

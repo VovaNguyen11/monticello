@@ -1,56 +1,70 @@
 .gallery {
-    padding: 140px 0;
+  padding: 140px 0;
+  @include respond-to(tablet) {
+    padding: 100px 30px;
+  }
+  @include respond-to(phone) {
+    padding: 50px 15px;
+  }
 
-    &__wrapper {
-        padding: 93px 0 59px;
-        text-align: center;
-        box-sizing: border-box;
+  &__wrapper {
+    padding: 93px 0 59px;
+    text-align: center;
+    box-sizing: border-box;
+    @include respond-to(tablet) {
+      padding: 70px 0 40px;
+    }
+    @include respond-to(phone) {
+      padding: 40px 0 20px;
+    }
+  }
+
+  &__item {
+    @include link-res;
+    position: relative;
+
+    &::before {
+      @include overlay(#000000);
+      opacity: 0;
     }
 
-    &__item {
-        @include link-res;
-        position: relative;
-
-        &::before {
-            @include overlay(#000000);
-            opacity: 0;
-        }
-
-        &::after {
-            @include overlay(url('../img/gallery/gallery-img-overlay.png') no-repeat center);
-            opacity: 0;
-        }
-
-        &:hover::before {
-            opacity: .15;
-        }
-
-        &:hover::after {
-            opacity: 1;
-        }
+    &::after {
+      @include overlay(
+        url('../img/gallery/gallery-img-overlay.png') no-repeat center
+      );
+      opacity: 0;
     }
 
-    &__img {
-        width: 100%;
-        height: auto;
-        display: block;
+    &:hover::before {
+      opacity: 0.15;
     }
+
+    &:hover::after {
+      opacity: 1;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
 .grid-outer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+  @include scr-max(735px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 
-    @include scr-max(812px){
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-    }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
 }
 
 .grid-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
 }

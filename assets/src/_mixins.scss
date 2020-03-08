@@ -1,94 +1,127 @@
 @mixin flex() {
-    display: flex;
+  display: flex;
 }
 
 @mixin flex-wrapped() {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @mixin flex-between() {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @mixin flex-centered() {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin flex-end() {
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
-@mixin font ($family, $color, $size, $weight) {
-    font-family: $family;
-    color: $color;
-    font-size: $size;
-    font-weight: $weight;
+@mixin font($family, $color, $size, $weight) {
+  font-family: $family;
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
 }
 
-@mixin font-heading () {
-    font-family: 'GothamBold';
-    color: $font-main;
-    font-size: 44px;
-    font-weight: normal;
-    text-transform: uppercase;
+@mixin font-heading() {
+  font-family: 'GothamBold';
+  color: $font-main;
+  font-size: rem(44);
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
-@mixin font-main ($color, $size) {
-    font-family: 'GothamBook';
-    color: $color;
-    font-size: $size;
-    font-weight: normal;
+@mixin font-main($color, $size) {
+  font-family: 'GothamBook';
+  color: $color;
+  font-size: $size;
+  font-weight: normal;
 }
 
-@mixin font-text () {
-    font-family: 'Open Sans';
-    color: $font-alt;
-    font-size: 18px;
-    font-weight: normal;
+@mixin font-text() {
+  font-family: 'Open Sans';
+  color: $font-alt;
+  font-size: rem(18);
+  font-weight: normal;
 }
 
 @mixin list-res {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-@mixin link-res{
-    text-decoration: none;
+@mixin link-res {
+  text-decoration: none;
 }
 
 @mixin section-bg($url) {
-    background: url($url);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  background: url($url);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 @mixin overlay($bg) {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: $bg;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: $bg;
+}
+
+$phone: 320px;
+$largePhone: 640px;
+$tabletPortrait: 768px;
+$tabletLandscape: 1024px;
+$desktop: 1024px;
+
+@mixin respond-to($media) {
+  @if $media == phone {
+    @media (min-device-width: $phone) and (max-device-width: $largePhone) {
+      @content;
+    }
+  } @else if $media == tablet {
+    @media (min-device-width: $tabletPortrait) and (max-device-width: $tabletLandscape) {
+      @content;
+    }
+  } @else if $media == desktop {
+    @media (min-device-width: $desktop) {
+      @content;
+    }
+  }
 }
 
 @mixin scr-max($width) {
-    @media screen and (max-width: $width) {
-        @content;
-    }
+  @media all and (max-width: $width) {
+    @content;
+  }
 }
 
 @mixin scr-min($width) {
-    @media screen and (min-width: $width) {
-        @content;
-    }
+  @media all and (min-width: $width) {
+    @content;
+  }
 }
 
+@function rem($pixels, $context: 16px) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}

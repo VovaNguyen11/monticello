@@ -1,64 +1,96 @@
 .news {
-    position: relative;
-    padding: 140px 0 133px;
-    background-image: linear-gradient(45deg, #3c7fd4 0%, #24ccfa 100%);
+  position: relative;
+  padding: 140px 0 133px;
+  background-image: linear-gradient(45deg, #3c7fd4 0%, #24ccfa 100%);
 
-    &__slider {
-        padding-top: 92px;
+  @include respond-to(tablet) {
+    padding: 70px 30px 60px;
+  }
+
+  @include respond-to(phone) {
+    padding: 50px 15px 30px;
+  }
+
+  &__slider {
+    padding-top: 92px;
+    @include respond-to(tablet) {
+      padding-top: 65px;
     }
 
-    &__item {
-        background: #ffffff;
-        margin-bottom: 47px;
-        min-height: 520px;
+    @include respond-to(phone) {
+      padding-top: 30px;
+    }
+  }
+
+  &__item {
+    background: #ffffff;
+    margin-bottom: 47px;
+    min-height: 520px;
+
+    @include respond-to(phone) {
+      margin-bottom: 15px;
+      min-height: auto;
+    }
+  }
+
+  &__preview {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 240px;
+  }
+
+  &__body {
+    padding: 22px 20px 30px;
+
+    @include respond-to(phone) {
+      padding: 15px 10px 20px;
+    }
+  }
+
+  &__heading {
+    @include font-heading;
+    font-size: rem(22);
+    margin: 0;
+    line-height: 34px;
+    letter-spacing: 0.2px;
+    @include respond-to(phone) {
+      line-height: 30px;
+    }
+  }
+
+  &__text {
+    @include font-text;
+    line-height: 30px;
+    margin: 0 0 31px 0;
+
+    @include respond-to(phone) {
+      line-height: 24px;
+      margin: 0 0 10px 0;
+    }
+  }
+
+  &__author {
+    @include flex;
+    align-items: center;
+
+    &-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 20px;
     }
 
-    &__preview {
-        display: block;
-        width: 100%;
-        height: auto;
-        max-height: 240px;
+    &-name {
+      @include font-main($font-main, rem(18));
+      text-transform: uppercase;
+      display: block;
+      margin: 0 0 7px 0;
     }
+  }
 
-    &__body {
-        padding: 22px 20px 30px;
-    }
-
-    &__heading {
-        @include font-heading;
-        font-size: 22px;
-        margin: 0 0 2px 0;
-        line-height: 34px;
-        letter-spacing: 0.2px;
-    }
-
-    &__text {
-        @include font-text;
-        line-height: 30px;
-        margin: 0 0 31px 0;
-    }
-
-    &__author {
-        @include flex;
-        align-items: center;
-
-        &-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 20px;
-        }
-
-        &-name {
-            @include font-main($font-main, 18px);
-            text-transform: uppercase;
-            display: block;
-            margin: 0 0 7px 0;
-        }
-    }
-
-    &__date {
-        @include font-main($main-color, 14px);
-        display: block;
-    }
+  &__date {
+    @include font-main($main-color, rem(14));
+    display: block;
+  }
 }

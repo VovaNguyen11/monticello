@@ -1,4 +1,8 @@
 .header {
-    @include flex-end;
-    align-items: center;
+  @include flex-centered;
+  align-items: center;
+
+  @include scr-max($desktop) {
+    flex-wrap: wrap;
+  }
 }

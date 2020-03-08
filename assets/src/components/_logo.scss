@@ -1,7 +1,15 @@
 .logo {
-    margin-right: auto;
+  margin-right: auto;
 
-    &--footer {
-        margin-bottom: 40px;
+  &--footer {
+    margin-bottom: 40px;
+    @include respond-to(phone) {
+      margin-bottom: 20px;
     }
+  }
+
+  @include scr-max($desktop) {
+    text-align: center;
+    width: 100%;
+  }
 }
